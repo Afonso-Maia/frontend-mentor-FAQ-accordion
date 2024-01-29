@@ -1,0 +1,147 @@
+:root {
+  --white: hsl(0, 0%, 100%);
+  --light-pink: hsl(275, 100%, 97%);
+  --grayish-purple: hsl(292, 16%, 49%);
+  --dark-purple: hsl(292, 42%, 14%);
+  --pink: hsl(281, 83%, 54%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  font-family: "Work Sans", sans-serif;
+  background-color: var(--light-pink);
+  height: 100vh;
+}
+
+.img-container {
+  top: 0;
+  position: absolute;
+  width: 100%;
+  height: 320px;
+  background-image: url("./assets/images/background-pattern-desktop.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  z-index: 1;
+  position: absolute;
+  left: 50%;
+  top: 170px;
+  transform: translateX(-50%);
+  background-color: white;
+  width: 600px;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0px 32px 56px 0px rgba(80, 0, 118, 0.1);
+}
+
+.header {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.header img {
+  width: 40px;
+  height: 40px;
+}
+
+.header h1 {
+  font-size: 56px;
+  font-weight: 700;
+  color: var(--dark-purple);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+hr {
+  border-color: var(--light-pink);
+}
+
+summary {
+  position: relative;
+  display: flex;
+  align-items: center;
+  list-style: none;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--dark-purple);
+}
+
+summary:hover {
+  cursor: pointer;
+  color: var(--pink);
+}
+
+summary::after {
+  position: absolute;
+  right: 0;
+  content: url("./assets/images/icon-plus.svg");
+  width: 30px;
+  height: 30px;
+}
+
+details[open] summary::after {
+  content: url("/assets/images/icon-minus.svg");
+}
+
+details p {
+  line-height: 150%;
+  margin-top: 24px;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--grayish-purple);
+}
+
+@media (width < 600px) {
+  .container {
+    width: 327px;
+    padding: 24px;
+    border-radius: 8px;
+  }
+
+  .header {
+    margin-bottom: 24px;
+  }
+
+  .header img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .header h1 {
+    font-size: 32px;
+  }
+
+  .content {
+    gap: 20px;
+  }
+
+  summary {
+    font-size: 16px;
+    margin-right: 30px;
+    padding-right: 24px;
+  }
+
+  summary::after {
+    width: 30px;
+    height: 30px;
+    right: -30px;
+  }
+
+  details p {
+    font-size: 14px;
+  }
+}
